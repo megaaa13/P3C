@@ -15,18 +15,14 @@ int pal(char *str) {
             if (*(str + i) != *(str + j)) {
                 return 0;
             } else {
-                i++;
-                j--;
-                size = size - 2;
+                i++; j--; size = size - 2;
             }
         } else {
             if (*(str + i) == ' ') {
-                i++;
-                size--;
+                i++; size--;
             }
             if (*(str + j) == ' ') {
-                j--;
-                size--;
+                j--; size--;
             }
         }
     }
@@ -34,6 +30,6 @@ int pal(char *str) {
 }
 int main(int argc, char const *argv[])
 {
-    printf("%d\n", pal(""));
+    printf("%d\n", pal("ka      ya            k"));
     return 0;
 }
