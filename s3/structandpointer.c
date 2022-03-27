@@ -38,7 +38,7 @@ char* getName(product_t prod) {
 }
 
 int prodEquals(product_t *ptrProd, product_t prod) {
-    if (getPrice(prod) == getPtrPrice(ptrProd) && strcmp(getPtrName(ptrProd), getName(prod)) == 0) {
+    if (getPrice(prod) == getPtrPrice(ptrProd) && strcmp(ptrProd -> name, prod.name) == 0) {
         return 1;
     }
     return 0;

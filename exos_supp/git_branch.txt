@@ -1,0 +1,13 @@
+git branch branch
+
+git branch -d branch
+
+git branch
+
+git checkout branch
+
+git push origin branch
+
+git pull origin branch
+
+git merge branch

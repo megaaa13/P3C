@@ -1,0 +1,5 @@
+Bonjour
+Hello
+Coucou (a = 0; b = 0)
+Salut
+Coucou (a = 1; b = 0)

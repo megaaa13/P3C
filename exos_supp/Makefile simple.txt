@@ -1,0 +1,11 @@
+main:
+	@gcc helloworld.c -o prog
+	@./prog
+
+
+main:
+	@gcc helloworld.c -o prog
+	@./prog
+    
+clean:
+	@rm -f prog

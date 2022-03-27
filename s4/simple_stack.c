@@ -27,6 +27,7 @@ int pop(struct node **head, char *result)
     *head = oldHead -> next;
     free(oldHead -> name);
     free(oldHead);
+    return 0;
 }
 
 /**

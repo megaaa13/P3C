@@ -26,7 +26,7 @@ int insert(node_t **head, char val, int (*cmp)(char, char))
     }
     node_t *runner = *head;
     node_t *prev = *head;
-    if ((*cmp)(runner->val, val) > 0)
+    if ((*cmp)(runner->val, val) >= 0)
     {
         if (!(*cmp)(val, runner->val))
             return 0;
@@ -38,10 +38,10 @@ int insert(node_t **head, char val, int (*cmp)(char, char))
         *head = newHead;
         return 0;
     }
-    runner = runner -> next;
+    runner = runner->next;
     while (runner != NULL)
     {
-        if ((*cmp)(runner->val, val) >= 0)
+        if ((*cmp)(runner->val, val) > 0)
         {
             node_t *newHead = (node_t *)malloc(sizeof(node_t));
             if (!newHead)

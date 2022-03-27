@@ -3,9 +3,9 @@ int first(void *ptr) {
 }
 
 int second(void *ptr) {
-    return *((char *)ptr + 3);
+    return *((char *)ptr + 6);
 }
 
 int third(void *ptr) {
-    return *((int *)(ptr + 45))
+    return *((int *)(ptr + 45));
 }

@@ -1,0 +1,15 @@
+main:
+	@gcc module_a.c -c -o module_a.o
+	@gcc module_b.c -c -o module_b.o
+	@gcc main.c -o prog module_a.o module_b.o
+	@./prog
+
+main:
+	@gcc module_a.c -c -o module_a.o
+	@gcc module_b.c -c -o module_b.o
+	@gcc main.c -o prog module_a.o module_b.o
+	@./prog
+    
+clean:
+	rm -f *.o
+	rm -f prog
