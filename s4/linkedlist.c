@@ -24,28 +24,15 @@ struct node
  */
 struct node *pair_filter(struct node *head)
 {
-    if (head == NULL)
-        return NULL;
-    struct node *newHead = (struct node *)memcpy((struct node *)malloc(sizeof(struct node)), head, sizeof(struct node));
-    if (newHead == NULL)
-        return NULL;
-    struct node *tail = newHead;
+    if(head == NULL) return NULL; //We are at the end of the list
 
-    head = head->next;
-    if (head == NULL)
-        return newHead;
-    head = head->next;
+    struct node *newNode = (struct node*) malloc(sizeof(struct node)); 
+    if(newNode==NULL) return NULL;
+    
+    memcpy(newNode, head, sizeof(struct node));
 
-    while (head != NULL)
-    {
-        tail->next = (struct node *)memcpy((struct node *)malloc(sizeof(struct node)), head, sizeof(struct node));
-        tail = tail->next;
+    if(head->next == NULL) newNode->next = NULL; //If the next element is NULL then it means we are at the end of the list (wich has an odd index)
+    else newNode->next = pair_filter(head->next->next); //We skip a element (next->next) to only take pair indexes
 
-        head = head->next;
-        if (head == NULL)
-            return newHead;
-        head = head->next;
-    }
-    tail -> next = NULL;
-    return newHead;
+    return newNode;
 }
